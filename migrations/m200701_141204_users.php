@@ -18,7 +18,7 @@ class m200701_141204_users extends Migration
             'password' => $this->string()->notNull(),
             'auth_key' => $this->string()->notNull(),
             'access_token' => $this->string()->notNull()->unique(), //TODO migrations
-            'cratetime' => $this->dateTime()->defaultValue('now()')
+            'createtime' => 'timestamp default now()'
         ]);
     }
 

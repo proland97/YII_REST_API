@@ -15,7 +15,7 @@ class m200708_143543_messages extends Migration
             'message' => $this->string(),
             'created_by' => $this->integer(),
             'belongs_to_group' => $this->integer(),
-            'create_time' => $this->dateTime()->defaultValue('now()')
+            'createtime' => 'timestamp default now()'
         ]);
 
 
