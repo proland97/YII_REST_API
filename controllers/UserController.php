@@ -99,7 +99,7 @@ class UserController extends ApiController
             $result->delete();
             return [
                 'success' => true,
-                'message' => 'Message deleted!'
+                'message' => 'User deleted!'
             ];
         }
     }
