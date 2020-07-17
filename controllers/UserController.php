@@ -3,6 +3,7 @@ namespace app\controllers;
 
 use app\models\User;
 use yii\filters\auth\HttpBearerAuth;
+use yii\helpers\VarDumper;
 use yii\rest\ActiveController;
 use yii\web\ForbiddenHttpException;
 use app\controllers\ApiController;
@@ -80,6 +81,7 @@ class UserController extends ApiController
 
     public function actionIndex()
     {
+        //Yii::error(VarDumper::dumpAsString($this->behaviors['authenticator']), __METHOD__);
         $result = $this->loadAll();
         if(empty($result)){
             throw new NotFoundHttpException('Not found!');
