@@ -51,7 +51,7 @@ class UserController extends ApiController
     public function loadAll()
     {
         //Check user is admin
-        if(Yii::$app->user->id === 2){
+        if($this->isAdmin()){
             return User::find()->all();
         }else{
             return User::find()->ofId(Yii::$app->user->id)->all();
@@ -61,7 +61,7 @@ class UserController extends ApiController
     public function loadOne($id)
     {
         //Check user is admin
-        if(Yii::$app->user->id === 2){
+        if($this->isAdmin()){
             return User::find()->ofId($id)->one();
         }else{
             return User::find()->ofId(Yii::$app->user->id)->ofId($id)->one();
