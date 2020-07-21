@@ -18,8 +18,12 @@ class m200701_141204_users extends Migration
             'password' => $this->string()->notNull(),
             'auth_key' => $this->string()->notNull(),
             'access_token' => $this->string()->notNull()->unique(), //TODO migrations
-            'createtime' => 'timestamp default now()'
+            'create_time' => 'timestamp default now()'
         ]);
+
+        $this->insert('users', ['username' => 'test', 'password' => 'test', 'auth_key' => 'test', 'access_token' => 'test']);
+        $this->insert('users', ['username' => 'admin', 'password' => 'admin', 'auth_key' => 'admin', 'access_token' => 'admin']);
+
     }
 
     /**

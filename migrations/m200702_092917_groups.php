@@ -15,8 +15,12 @@ class m200702_092917_groups extends Migration
         $this->createTable('groups', [
             'group_id' => $this->primaryKey(),
             'group_name' => $this->string(),
-            'createtime' => 'timestamp default now()'
+            'create_time' => 'timestamp default now()'
         ]);
+
+        $this->insert('groups', ['group_name' => 'First Group']);
+        $this->insert('groups', ['group_name' => 'Awesome Group']);
+
     }
 
     /**

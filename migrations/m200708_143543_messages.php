@@ -19,8 +19,12 @@ class m200708_143543_messages extends Migration
         ]);
 
 
-        $this->addForeignKey('FK_message_user_user_id','messages','created_by','users','id');
-        $this->addForeignKey('FK_message_group_group_id','messages','belongs_to_group','groups','group_id');
+        $this->addForeignKey('FK_message_user_user_id','messages','created_by','users','id', 'CASCADE', 'CASCADE');
+        $this->addForeignKey('FK_message_group_group_id','messages','belongs_to_group','groups','group_id', 'CASCADE', 'CASCADE');
+
+        $this->insert('messages', ['message' => ' this is amessage', 'created_by' => 1, 'belongs_to_group' => 1]);
+        $this->insert('messages', ['message' => 'admin message', 'created_by' => 2, 'belongs_to_group' => 1]);
+        $this->insert('messages', ['message' => 'some message', 'created_by' => 1, 'belongs_to_group' => 2]);
 
     }
 
